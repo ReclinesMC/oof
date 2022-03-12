@@ -1,0 +1,12 @@
+name: oof
+version: '${project.version}'
+main: me.reclines.oof.Main
+api-version: 1.13
+load: STARTUP
+commands:
+  oof:
+    permission: oof.oof
+
+permissions:
+  oof.oof:
+    deafault: op
