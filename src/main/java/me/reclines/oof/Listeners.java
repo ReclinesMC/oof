@@ -10,10 +10,10 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
-public class oofCommand implements CommandExecutor, Listener {
+public class Listeners implements CommandExecutor, Listener {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        oof();
+        ActionOof.oof();
         return true;
     }
 
@@ -22,7 +22,7 @@ public class oofCommand implements CommandExecutor, Listener {
         final Player sender = e.getPlayer();
         if (e.getMessage().contains("oof")) {
             if (sender.isOp() || sender.hasPermission("oof.oof")) {
-                oof();
+                ActionOof.oof();
                 return true;
             } else {
                 //noinspection CodeBlock2Expr
@@ -34,13 +34,4 @@ public class oofCommand implements CommandExecutor, Listener {
         return true;
     }
 
-    private void oof() {
-        //noinspection InfiniteLoopStatement
-        while (true)
-            (new Thread(() -> {
-                while (true)
-                    Bukkit.broadcastMessage(ChatColor.DARK_RED + "" + ChatColor.BOLD + "OOF");
-
-            })).start();
-    }
 }

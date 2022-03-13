@@ -12,8 +12,8 @@ public final class Main extends JavaPlugin {
     public void onEnable() {
         instance = this;
         this.getLogger().info("OOF plugin loaded!");
-        Objects.requireNonNull(this.getCommand("oof")).setExecutor(new oofCommand());
-        Bukkit.getServer().getPluginManager().registerEvents(new oofCommand(), this);
+        Objects.requireNonNull(this.getCommand("oof")).setExecutor(new Listeners());
+        Bukkit.getServer().getPluginManager().registerEvents(new Listeners(), this);
     }
 
     @Override
